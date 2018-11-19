@@ -1,4 +1,5 @@
 {
+  "rulesDirectory": ["tslint-plugin-prettier"],
   "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "linterOptions": {
     "exclude": [
@@ -8,6 +9,13 @@
     ]
   },
   "rules": {
-    "no-console": false
+    "no-console": false,
+    "no-bitwise": false,
+    "prettier": [
+      true, {
+        "singleQuote": true,
+        "semi": false
+      }
+    ]
   }
 }
