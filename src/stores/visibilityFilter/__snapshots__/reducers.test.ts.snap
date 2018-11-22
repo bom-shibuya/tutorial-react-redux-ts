@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VisibilityFilter reducers test SHOW_ACTIVE 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+- SHOW_ALL
++ SHOW_ACTIVE"
+`;
+
+exports[`VisibilityFilter reducers test SHOW_ALL 1`] = `
+"Snapshot Diff:
+Compared values have no visual difference."
+`;
+
+exports[`VisibilityFilter reducers test SHOW_COMPLETED 1`] = `
+"Snapshot Diff:
+- First value
++ Second value
+
+- SHOW_ALL
++ SHOW_COMPLETED"
+`;
