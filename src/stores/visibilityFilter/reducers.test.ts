@@ -1,6 +1,5 @@
 import * as snapshotDiff from 'snapshot-diff'
 import * as reducers from '.'
-import { initialState } from './reducers'
 
 describe('VisibilityFilter reducers test', () => {
   const {
