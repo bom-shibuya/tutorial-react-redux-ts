@@ -9,6 +9,10 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
   }
 })
 
+export interface IProps {
+  onSubmit: (value: string) => void
+}
+
 const AddTodo = connect(
   null,
   mapDispatchToProps

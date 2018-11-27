@@ -1,17 +1,21 @@
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { IState } from 'src/stores'
+import { IStore } from 'src/stores'
 import Link from '../components/Link'
 import {
   IVisibilityFilters,
   setVisibilityFilter
 } from '../stores/visibilityFilter'
 
+export interface IProps {
+  active: keyof IVisibilityFilters
+  onClick: () => void
+}
 interface IOwnProps {
   filter: keyof IVisibilityFilters
 }
 
-const mapStateToProps = (state: IState, ownProps: IOwnProps) => ({
+const mapStateToProps = (state: IStore, ownProps: IOwnProps) => ({
   active: ownProps.filter === state.visibilityFilter
 })
 

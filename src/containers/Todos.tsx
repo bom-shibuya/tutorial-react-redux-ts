@@ -1,12 +1,12 @@
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import { ITodo, toggleTodo } from 'src/stores/todos'
+import TodoList from '../components/TodoList'
+import { IStore } from '../stores'
+import { ITodo, toggleTodo } from '../stores/todos'
 import {
   IVisibilityFilters,
   VisibilityFilters
-} from 'src/stores/visibilityFilter'
-import TodoList from '../components/TodoList'
-import { IState } from '../stores'
+} from '../stores/visibilityFilter'
 
 const getVisibleTodos = (todos: ITodo[], filter: keyof IVisibilityFilters) => {
   switch (filter) {
@@ -19,15 +19,20 @@ const getVisibleTodos = (todos: ITodo[], filter: keyof IVisibilityFilters) => {
   }
 }
 
-const mapStateToProps = (state: IState) => ({
+const mapStateToProps = (state: IStore) => ({
   todos: getVisibleTodos(state.todos, state.visibilityFilter)
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  onClick(id: number) {
-    dispatch(toggleTodo(id))
+  onClick(index: number) {
+    dispatch(toggleTodo(index))
   }
 })
+
+export interface IProps {
+  todos: ITodo[]
+  onClick: (index: number) => void
+}
 
 const Todos = connect(
   mapStateToProps,

@@ -2,7 +2,7 @@ import { combineReducers, createStore } from 'redux'
 import { ITodo, todos } from './todos'
 import { IVisibilityFilters, visibilityFilter } from './visibilityFilter'
 
-export interface IState {
+export interface IStore {
   todos: ITodo[]
   visibilityFilter: keyof IVisibilityFilters
 }
