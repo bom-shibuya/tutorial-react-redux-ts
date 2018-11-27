@@ -13,7 +13,11 @@ export interface IProps {
   onSubmit: (value: string) => void
 }
 
-const AddTodo = connect(
+interface IOwnProps {
+  store?: unknown
+}
+
+const AddTodo = connect<{}, IProps, IOwnProps>(
   null,
   mapDispatchToProps
 )(AddTodoForm)

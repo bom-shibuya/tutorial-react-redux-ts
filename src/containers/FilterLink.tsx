@@ -13,6 +13,7 @@ export interface IProps {
 }
 interface IOwnProps {
   filter: keyof IVisibilityFilters
+  store?: unknown
 }
 
 const mapStateToProps = (state: IStore, ownProps: IOwnProps) => ({

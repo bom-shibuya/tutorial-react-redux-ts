@@ -19,7 +19,11 @@ const getVisibleTodos = (todos: ITodo[], filter: keyof IVisibilityFilters) => {
   }
 }
 
-const mapStateToProps = (state: IStore) => ({
+interface IOwnProps {
+  store?: unknown
+}
+
+const mapStateToProps = (state: IStore, {  }: IOwnProps) => ({
   todos: getVisibleTodos(state.todos, state.visibilityFilter)
 })
 
