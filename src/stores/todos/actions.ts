@@ -33,8 +33,10 @@ export type Action = IAddTodo | IToggleTodo
 
 export const asyncAddTodo: ActionCreator<
   ThunkAction<void, IStore, undefined, Action>
-> = (text: IAddTodo['text']) => dispatch => {
-  setTimeout(() => {
-    dispatch(addTodo(text))
-  }, 1000)
-}
+> = (text: IAddTodo['text']) => dispatch =>
+  new Promise(resolve => {
+    setTimeout(() => {
+      dispatch(addTodo(text))
+      resolve()
+    }, 1000)
+  })

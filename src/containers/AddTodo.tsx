@@ -10,8 +10,8 @@ const mapDispatchToProps = (
   onSubmit(value: string) {
     dispatch(addTodo(value))
   },
-  onAsyncSubmit(value: string) {
-    dispatch(asyncAddTodo(value))
+  async onAsyncSubmit(value: string) {
+    await dispatch(asyncAddTodo(value))
   }
 })
 
