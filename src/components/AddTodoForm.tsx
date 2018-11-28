@@ -5,12 +5,14 @@ export interface IProps {
   onAsyncSubmit: (value: string) => void
 }
 
+type valueof<T> = T[keyof T]
+
 const AddTodoForm = ({ onSubmit, onAsyncSubmit }: IProps) => {
   let input: HTMLInputElement | null
 
   const submitValue = (
     e: React.MouseEvent,
-    submitFunction: (value: string) => void
+    submitFunction: valueof<IProps>
   ) => {
     e.preventDefault()
     if (!input || !input.value) {
