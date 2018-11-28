@@ -1,16 +1,23 @@
 import { connect } from 'react-redux'
-import { Dispatch } from 'redux'
+import { ThunkDispatch } from 'redux-thunk'
 import AddTodoForm from '../components/AddTodoForm'
-import { addTodo } from '../stores/todos'
+import { IStore } from '../stores'
+import { Action, addTodo, asyncAddTodo } from '../stores/todos'
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
+const mapDispatchToProps = (
+  dispatch: ThunkDispatch<IStore, undefined, Action>
+) => ({
   onSubmit(value: string) {
     dispatch(addTodo(value))
+  },
+  async onAsyncSubmit(value: string) {
+    await dispatch(asyncAddTodo(value))
   }
 })
 
 export interface IProps {
   onSubmit: (value: string) => void
+  onAsyncSubmit: (value: string) => void
 }
 
 interface IOwnProps {

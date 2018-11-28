@@ -2,24 +2,43 @@ import * as React from 'react'
 
 export interface IProps {
   onSubmit: (value: string) => void
+  onAsyncSubmit: (value: string) => void
 }
 
-const AddTodoForm = ({ onSubmit }: IProps) => {
+type valueof<T> = T[keyof T]
+
+const AddTodoForm = ({ onSubmit, onAsyncSubmit }: IProps) => {
   let input: HTMLInputElement | null
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const submitValue = (
+    e: React.MouseEvent,
+    submitFunction: valueof<IProps>
+  ) => {
     e.preventDefault()
     if (!input || !input.value) {
       return
     }
-    onSubmit(input.value)
+    submitFunction(input.value)
     input.value = ''
+  }
+
+  const handleSubmit = (e: React.MouseEvent) => {
+    submitValue(e, onSubmit)
+  }
+
+  const handleAsyncSubmit = (e: React.MouseEvent) => {
+    submitValue(e, onAsyncSubmit)
   }
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input type="text" ref={node => (input = node)} />
-        <button type="submit">Add</button>
+        <button onClick={handleSubmit} type="button">
+          Add
+        </button>
+        <button onClick={handleAsyncSubmit} type="button">
+          Async Add.
+        </button>
       </form>
     </div>
   )

@@ -1,4 +1,5 @@
-import { combineReducers, createStore } from 'redux'
+import { applyMiddleware, combineReducers, createStore } from 'redux'
+import thunk from 'redux-thunk'
 import { ITodo, todos } from './todos'
 import { IVisibilityFilters, visibilityFilter } from './visibilityFilter'
 
@@ -12,6 +13,6 @@ const todoApps = combineReducers({
   visibilityFilter
 })
 
-const store = createStore(todoApps)
+const store = createStore(todoApps, applyMiddleware(thunk))
 
 export default store

@@ -1,5 +1,10 @@
+import { ActionCreator } from 'redux'
+import { ThunkAction } from 'redux-thunk'
+import { IStore } from '../'
+
 // action types
 export const ADD_TODO = 'ADD_TODO'
+export const ASYNC_ADD_TODO = 'ASYNC_ADD_TODO'
 export const REMOVE_TODO = 'REMOVE_TODO'
 export const TOGGLE_TODO = 'TOGGLE_TODO'
 
@@ -25,3 +30,13 @@ export const toggleTodo = (index: IToggleTodo['index']): IToggleTodo => ({
 })
 
 export type Action = IAddTodo | IToggleTodo
+
+export const asyncAddTodo: ActionCreator<
+  ThunkAction<void, IStore, undefined, Action>
+> = (text: IAddTodo['text']) => dispatch =>
+  new Promise(resolve => {
+    setTimeout(() => {
+      dispatch(addTodo(text))
+      resolve()
+    }, 1000)
+  })
