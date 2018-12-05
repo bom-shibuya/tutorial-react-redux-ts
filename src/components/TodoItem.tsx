@@ -1,6 +1,7 @@
 import * as React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { ITodo } from '../stores/todos'
+import { mq } from '../styles'
 
 export interface IProps {
   todo: ITodo
@@ -8,40 +9,18 @@ export interface IProps {
   i: number
 }
 
-const mq = {
-  base(range: string, args: TemplateStringsArray) {
-    return css`
-      @media ${range} {
-        ${css(args)};
-      }
-    `
-  },
-  min(size: string) {
-    return (args: TemplateStringsArray) =>
-      this.base(`(min-width: ${size})`, args)
-  },
-  max(size: string) {
-    return (args: TemplateStringsArray) =>
-      this.base(`(max-width: ${size})`, args)
-  },
-  between(minSize: string, maxSize: string) {
-    return (args: TemplateStringsArray) =>
-      this.base(`(min-width: ${minSize}) and (max-width: ${maxSize})`, args)
-  }
-}
-
 const StyledTodoItem = styled.li`
   color: palevioletred;
   font-size: 1.6rem;
   line-height: 1.75;
   background-color: ${(props: { i: number }) => props.i % 2 && 'blue'}
-  ${mq.max('767px')`
+  ${mq.max()`
     padding: 10px;
   `}
-  ${mq.between('768px', '1024px')`
+  ${mq.between()`
     padding: 30px;
   `}
-  ${mq.min('1025px')`
+  ${mq.min()`
     padding: 50px;
   `}
 

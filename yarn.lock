@@ -145,6 +145,11 @@
     "@types/react" "*"
     csstype "^2.2.0"
 
+"@types/webfontloader@^1.6.29":
+  version "1.6.29"
+  resolved "https://registry.yarnpkg.com/@types/webfontloader/-/webfontloader-1.6.29.tgz#c6b5f6eb8ca31d0aae6b02b6c1300349dd93ea8e"
+  integrity sha512-wobuM+LvpkzU296NsFVRGDAFWw3X2XEhrLHuvV+VGSbok6aOxQcymmopUFwNB69qy5oudHt9lYC0JF+z+DxFLw==
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -8254,6 +8259,11 @@ styled-components@^4.1.2:
     stylis-rule-sheet "^0.0.10"
     supports-color "^5.5.0"
 
+styled-reset@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/styled-reset/-/styled-reset-1.6.1.tgz#80ec719bbcfffa6f7c1bd7781aec2c93145aa47d"
+  integrity sha512-XpEXPrE8HJB1s1s9w1EyZ3ML5zy2dDRhia0M9tvom+NZx+CZ8Z5TDDF/UppHqOd44cwP6CG3cxmTNfc/9bsSgw==
+
 stylis-rule-sheet@^0.0.10:
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/stylis-rule-sheet/-/stylis-rule-sheet-0.0.10.tgz#44e64a2b076643f4b52e5ff71efc04d8c3c4a430"
@@ -8977,6 +8987,11 @@ wbuf@^1.1.0, wbuf@^1.7.2:
   integrity sha512-O84QOnr0icsbFGLS0O3bI5FswxzRr8/gHwWkDlQFskhSPryQXvrTMxjxGP4+iWYoauLoBvfDpkrOauZ+0iZpDA==
   dependencies:
     minimalistic-assert "^1.0.0"
+
+webfontloader@^1.6.28:
+  version "1.6.28"
+  resolved "https://registry.yarnpkg.com/webfontloader/-/webfontloader-1.6.28.tgz#db786129253cb6e8eae54c2fb05f870af6675bae"
+  integrity sha1-23hhKSU8tujq5UwvsF+HCvZnW64=
 
 webidl-conversions@^3.0.0:
   version "3.0.1"
