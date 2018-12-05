@@ -1,12 +1,16 @@
 import * as React from 'react'
 
-export interface IProps {
+interface IProps {
   active: boolean
   children: React.ReactNode
   onClick: () => void
 }
 
-const Link: React.SFC<IProps> = ({ active, children, onClick }: IProps) => {
+export const Link: React.SFC<IProps> = ({
+  active,
+  children,
+  onClick
+}: IProps) => {
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault()
     onClick()
@@ -22,5 +26,3 @@ const Link: React.SFC<IProps> = ({ active, children, onClick }: IProps) => {
 
   return active ? activeLink() : inactiveLink()
 }
-
-export default Link

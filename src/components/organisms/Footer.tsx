@@ -1,8 +1,8 @@
 import * as React from 'react'
-import FilterLink from '../containers/FilterLink'
-import { VisibilityFilters } from '../stores/visibilityFilter'
+import { FilterLink } from '../../containers'
+import { VisibilityFilters } from '../../stores/visibilityFilter'
 
-const Footer = () => (
+export const Footer = () => (
   <footer>
     Show: <FilterLink filter={VisibilityFilters.SHOW_ALL}>All</FilterLink>
     {', '}
@@ -11,5 +11,3 @@ const Footer = () => (
     <FilterLink filter={VisibilityFilters.SHOW_COMPLETED}>Completed</FilterLink>
   </footer>
 )
-
-export default Footer

@@ -1,9 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { ITodo } from '../stores/todos'
-import { mq } from '../styles'
+import { ITodo } from '../../stores/todos'
+import { mq } from '../../styles'
 
-export interface IProps {
+interface IProps {
   todo: ITodo
   onClick: (i: number) => void
   i: number
@@ -29,7 +29,7 @@ const StyledTodoItem = styled.li`
   }
 `
 
-const TodoItem = ({ todo, onClick, i }: IProps) => {
+export const TodoItem = ({ todo, onClick, i }: IProps) => {
   const handleClick = () => onClick(i)
   return (
     <StyledTodoItem i={i}>
@@ -42,5 +42,3 @@ const TodoItem = ({ todo, onClick, i }: IProps) => {
     </StyledTodoItem>
   )
 }
-
-export default TodoItem

@@ -1,13 +1,13 @@
 import * as React from 'react'
 
-export interface IProps {
+interface IProps {
   onSubmit: (value: string) => void
   onAsyncSubmit: (value: string) => void
 }
 
 type valueof<T> = T[keyof T]
 
-const AddTodoForm = ({ onSubmit, onAsyncSubmit }: IProps) => {
+export const AddTodoForm = ({ onSubmit, onAsyncSubmit }: IProps) => {
   let input: HTMLInputElement | null
 
   const submitValue = (
@@ -43,5 +43,3 @@ const AddTodoForm = ({ onSubmit, onAsyncSubmit }: IProps) => {
     </div>
   )
 }
-
-export default AddTodoForm

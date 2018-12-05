@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
-import AddTodoForm from '../components/AddTodoForm'
+import { AddTodoForm } from '../components/molecules'
 import { IStore } from '../stores'
 import { Action, addTodo, asyncAddTodo } from '../stores/todos'
 
@@ -24,9 +24,7 @@ interface IOwnProps {
   store?: unknown
 }
 
-const AddTodo = connect<{}, IProps, IOwnProps>(
+export const AddTodo = connect<{}, IProps, IOwnProps>(
   null,
   mapDispatchToProps
 )(AddTodoForm)
-
-export default AddTodo

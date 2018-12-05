@@ -5,7 +5,7 @@ import {
   SET_VISIBILITY_FILTER,
   VisibilityFilters
 } from '../stores/visibilityFilter'
-import FilterLink, { IProps } from './FilterLink'
+import { FilterLink, IProps } from './FilterLink'
 
 describe('FilterLink container test', () => {
   let wrapper: ShallowWrapper<IProps>

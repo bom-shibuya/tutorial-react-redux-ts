@@ -3,7 +3,7 @@ import * as React from 'react'
 import configureStore, { MockStoreEnhanced } from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import { ADD_TODO } from '../stores/todos'
-import AddTodo, { IProps } from './AddTodo'
+import { AddTodo, IProps } from './AddTodo'
 
 describe('AddTodo container test', () => {
   let wrapper: ShallowWrapper<IProps>

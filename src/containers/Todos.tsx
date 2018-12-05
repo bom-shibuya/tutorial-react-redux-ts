@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
-import TodoList from '../components/TodoList'
+import { TodoList } from '../components/molecules'
 import { IStore } from '../stores'
 import { ITodo, toggleTodo } from '../stores/todos'
 import {
@@ -38,9 +38,7 @@ export interface IProps {
   onClick: (index: number) => void
 }
 
-const Todos = connect(
+export const Todos = connect(
   mapStateToProps,
   mapDispatchToProps
 )(TodoList)
-
-export default Todos

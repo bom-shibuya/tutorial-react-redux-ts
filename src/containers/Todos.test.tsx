@@ -2,7 +2,7 @@ import { shallow, ShallowWrapper } from 'enzyme'
 import * as React from 'react'
 import configureStore, { MockStoreEnhanced } from 'redux-mock-store'
 import { ITodo, TOGGLE_TODO } from '../stores/todos'
-import Todos, { IProps } from './Todos'
+import { IProps, Todos } from './Todos'
 
 describe('Todos test', () => {
   const mockStore = configureStore()

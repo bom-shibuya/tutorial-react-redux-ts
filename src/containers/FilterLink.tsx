@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 import { IStore } from 'src/stores'
-import Link from '../components/Link'
+import { Link } from '../components/atoms'
 import {
   IVisibilityFilters,
   setVisibilityFilter
@@ -26,9 +26,7 @@ const mapDispatchToProps = (dispatch: Dispatch, ownProps: IOwnProps) => ({
   }
 })
 
-const FilterLink = connect(
+export const FilterLink = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Link)
-
-export default FilterLink
