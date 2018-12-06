@@ -1,4 +1,21 @@
 import * as React from 'react'
+import styled, { css } from 'styled-components'
+import { Theme } from '../../styles/theme'
+import { color } from '../../styles/variables'
+
+const baseStyle = css`
+  font-weight: ${({ theme }: { theme: Theme }) => theme.font.weight.bold};
+`
+
+const ActiveLink = styled.span`
+  ${baseStyle}
+  text-decoration: line-through
+`
+
+const StyledLink = styled.a`
+  ${baseStyle}
+  color: ${color.accent}
+`
 
 interface IProps {
   active: boolean
@@ -16,12 +33,12 @@ export const Link: React.SFC<IProps> = ({
     onClick()
   }
 
-  const activeLink = () => <span>{children}</span>
+  const activeLink = () => <ActiveLink>{children}</ActiveLink>
 
   const inactiveLink = () => (
-    <a href="" onClick={handleClick}>
+    <StyledLink href="" onClick={handleClick}>
       {children}
-    </a>
+    </StyledLink>
   )
 
   return active ? activeLink() : inactiveLink()

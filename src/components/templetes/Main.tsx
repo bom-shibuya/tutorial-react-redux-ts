@@ -1,11 +1,12 @@
 import * as React from 'react'
+import styled from 'styled-components'
 import { Header } from '../organisms/'
+
+const App = styled.div``
+
 export const Main: React.SFC = ({ children }) => (
-  <div className="App">
+  <App>
     <Header />
-    <p className="App-intro">
-      To get started, edit <code>src/App.tsx</code> and save to reload.
-    </p>
     {children}
-  </div>
+  </App>
 )

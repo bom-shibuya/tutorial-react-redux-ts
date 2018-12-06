@@ -1,6 +1,8 @@
+import { color } from './variables'
+
 const font = {
   color: {
-    base: '#666'
+    base: color.black
   },
   family: {
     base: "'Noto Sans JP', sans-serif",
@@ -8,7 +10,7 @@ const font = {
   },
   size: {
     head: '4rem',
-    normal: '1.6rem',
+    normal: '1.4rem',
     subhead: '2.4rem'
   },
   weight: {
@@ -19,7 +21,7 @@ const font = {
 }
 
 const bg = {
-  base: '#fff'
+  base: color.white
 }
 
 export const theme = {

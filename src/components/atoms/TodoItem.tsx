@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { ITodo } from '../../stores/todos'
-import { mq } from '../../styles'
+// import { mq } from '../../styles'
 
 interface IProps {
   todo: ITodo
@@ -10,31 +10,29 @@ interface IProps {
 }
 
 const StyledTodoItem = styled.li`
-  color: palevioletred;
-  font-size: 1.6rem;
   line-height: 1.75;
-  background-color: ${(props: { i: number }) => props.i % 2 && 'blue'}
-  ${mq.max()`
-    padding: 10px;
-  `}
-  ${mq.between()`
-    padding: 30px;
-  `}
-  ${mq.min()`
-    padding: 50px;
-  `}
+  padding: 1rem 1.6rem;
+  border-bottom: 1px dashed #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
 
-  &:hover {
-    font-size: 2rem;
-  }
+const Text = styled.span<{ complete: boolean }>`
+  width: 92%;
+  text-decoration: ${({ complete }) => (complete ? 'line-through' : '')};
+`
+
+const Input = styled.input`
+  margin-left: auto;
 `
 
 export const TodoItem = ({ todo, onClick, i }: IProps) => {
   const handleClick = () => onClick(i)
   return (
-    <StyledTodoItem i={i}>
-      {todo.text}
-      <input
+    <StyledTodoItem>
+      <Text complete={todo.complete}>{todo.text}</Text>
+      <Input
         type="checkbox"
         defaultChecked={todo.complete}
         onClick={handleClick}

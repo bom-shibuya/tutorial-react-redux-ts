@@ -4,3 +4,11 @@ export const device = {
   tablet: '768px',
   tabletMax: '1024px'
 }
+
+export const color = {
+  accent: '#FE5F55',
+  black: '#040F16',
+  logo: '00DDFF',
+  subAccent: '#F9C80E',
+  white: '#FBFBFF'
+}

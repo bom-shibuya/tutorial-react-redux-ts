@@ -7,7 +7,15 @@ import reset from 'styled-reset'
 import { Theme } from './theme'
 
 export const GlobalStyles = createGlobalStyle`
-  ${reset}/
+  ${reset}
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  a {
+    color: inherit
+  }
   html {
     font-size: 62.5%;
   }
