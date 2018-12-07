@@ -7,7 +7,10 @@ export const Footer = () => (
   <footer>
     <ul>
       <li>
-        <Link to="/">TODO</Link>
+        <Link to="/">HOME</Link>
+      </li>
+      <li>
+        <Link to="/todo">TODO</Link>
       </li>
       <li>
         <Link to="/counter">COUNTER</Link>
