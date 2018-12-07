@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { AddTodo, Todos } from '../../containers'
 import { mq } from '../../styles'
-import { Footer } from '../organisms'
+import { TodoFooter } from '../organisms'
 import { Main } from '../templetes'
 
 const Wrapper = styled.div`
@@ -39,7 +39,7 @@ export const Todo: React.SFC = () => (
           <Todos />
         </TodoWrapper>
       </ContentWrapper>
-      <Footer />
+      <TodoFooter />
     </Wrapper>
   </Main>
 )

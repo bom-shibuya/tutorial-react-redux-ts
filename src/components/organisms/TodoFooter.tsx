@@ -7,7 +7,7 @@ const StyledFooter = styled.footer`
   text-align: center;
 `
 
-export const Footer = () => (
+export const TodoFooter = () => (
   <StyledFooter>
     Show 👀 => <FilterLink filter={VisibilityFilters.SHOW_ALL}>All</FilterLink>
     {', '}
