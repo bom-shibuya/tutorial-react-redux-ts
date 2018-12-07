@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter reducer snapshot shold return initial state 1`] = `
+"Snapshot Diff:
+Compared values have no visual difference."
+`;
+
+exports[`Counter reducer snapshot shold return minus state 1`] = `
+"Snapshot Diff:
+null"
+`;
+
+exports[`Counter reducer snapshot shold return plus state 1`] = `
+"Snapshot Diff:
+Compared values have no visual difference."
+`;
