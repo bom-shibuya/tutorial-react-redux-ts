@@ -1,18 +1,31 @@
-// import {ActionCreator} from 'redux'
-// import {ThunkAction} from 'redux-thunk'
+import { ActionCreator } from 'redux'
+import { ThunkAction } from 'redux-thunk'
+import { IStore } from '../'
 
-// export const INCREMENT = 'INCREMENT'
-// export const DECREMENT = 'DECREMENT'
-// export const ASYNC_INCREMENT = 'ASYBC_INCREMENT'
+export const PLUS_NUMBER = 'PLUS_NUMBER'
+export const MINUS_NUMBER = 'MINUS_NUMBER'
+export const ASYNC_PLUS_NUMBER = 'ASYNC_PLUS_NUMBER'
 
-// export const increment = () => ({
-//   type: INCREMENT as typeof INCREMENT
-// })
+export const plusNumber = (num: number) => ({
+  num,
+  type: PLUS_NUMBER as typeof PLUS_NUMBER
+})
 
-// export const decrement = () => ({
-//   type: DECREMENT as typeof DECREMENT
-// })
+export const minusNumber = (num: number) => ({
+  num,
+  type: MINUS_NUMBER as typeof MINUS_NUMBER
+})
 
-// export const asyncIncrement = () => {
+export type Action =
+  | ReturnType<typeof plusNumber>
+  | ReturnType<typeof minusNumber>
 
-// }
+export const asyncPlusNumber: ActionCreator<
+  ThunkAction<void, IStore, undefined, Action>
+> = (num: number) => dispatch =>
+  new Promise(resolve => {
+    setTimeout(() => {
+      dispatch(plusNumber(num))
+      resolve()
+    }, 1000)
+  })
