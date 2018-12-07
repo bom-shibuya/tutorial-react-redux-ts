@@ -50,11 +50,7 @@ const ButtonList = styled.ul`
 export const AddTodoForm: React.SFC<IProps> = ({ onSubmit, onAsyncSubmit }) => {
   let input: HTMLInputElement | null
 
-  const submitValue = (
-    e: React.MouseEvent,
-    submitFunction: valueof<IProps>
-  ) => {
-    e.preventDefault()
+  const submitValue = (submitFunction: valueof<IProps>) => {
     if (!input || !input.value) {
       return
     }
@@ -63,15 +59,20 @@ export const AddTodoForm: React.SFC<IProps> = ({ onSubmit, onAsyncSubmit }) => {
   }
 
   const handleSubmit = (e: React.MouseEvent) => {
-    submitValue(e, onSubmit)
+    e.preventDefault()
+
+    submitValue(onSubmit)
   }
 
   const handleAsyncSubmit = (e: React.MouseEvent) => {
-    submitValue(e, onAsyncSubmit)
+    e.preventDefault()
+
+    submitValue(onAsyncSubmit)
   }
 
   const handleForm = (e: React.FormEvent) => {
     e.preventDefault()
+    submitValue(onSubmit)
   }
   return (
     <div>
