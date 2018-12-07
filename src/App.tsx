@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { ThemeProvider } from 'styled-components'
 import * as WebFont from 'webfontloader'
-import { Todo } from './components/pages'
+import { Router } from './components/routers'
 import { GlobalStyles, theme } from './styles/'
 
 const webFontConfig = {
@@ -15,7 +15,7 @@ WebFont.load(webFontConfig)
 const App = () => (
   <ThemeProvider theme={theme}>
     <React.Fragment>
-      <Todo />
+      <Router />
       <GlobalStyles />
     </React.Fragment>
   </ThemeProvider>
