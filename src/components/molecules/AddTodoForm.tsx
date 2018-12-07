@@ -1,14 +1,13 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { mq } from '../../styles'
+import { valueof } from '../../types'
 import { Button } from '../atoms'
 
 interface IProps {
   onSubmit: (value: string) => void
   onAsyncSubmit: (value: string) => void
 }
-
-type valueof<T> = T[keyof T]
 
 const Form = styled.form`
   ${mq.min()`
