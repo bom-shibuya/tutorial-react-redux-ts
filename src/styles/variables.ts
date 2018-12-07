@@ -8,7 +8,7 @@ export const device = {
 export const color = {
   accent: '#FE5F55',
   black: '#040F16',
-  logo: '00DDFF',
+  logo: '#00DDFF',
   subAccent: '#F9C80E',
   white: '#FBFBFF'
 }
