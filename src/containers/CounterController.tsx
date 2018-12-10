@@ -18,8 +18,8 @@ const mapDispatchProps = (
   minusNumber(num: number) {
     dispatch(minusNumber(num))
   },
-  asyncPlusNumber(num: number) {
-    dispatch(asyncPlusNumber(num))
+  async asyncPlusNumber(num: number) {
+    await dispatch(asyncPlusNumber(num))
   }
 })
 

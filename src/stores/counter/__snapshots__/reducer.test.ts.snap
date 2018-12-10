@@ -12,5 +12,11 @@ null"
 
 exports[`Counter reducer snapshot shold return plus state 1`] = `
 "Snapshot Diff:
-Compared values have no visual difference."
+- First value
++ Second value
+
+  Object {
+-   \\"counter\\": 0,
++   \\"counter\\": 5,
+  }"
 `;

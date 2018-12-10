@@ -3,7 +3,7 @@ import { counter, initialState, minusNumber, plusNumber } from '.'
 
 describe('Counter reducer test', () => {
   test('shold return initial state', () => {
-    expect(counter(initialState, {})).toBe(initialState)
+    expect(counter(initialState, {} as any)).toBe(initialState)
   })
 
   test('shold return plus state', () => {
@@ -18,15 +18,20 @@ describe('Counter reducer test', () => {
 describe('Counter reducer snapshot', () => {
   test('shold return initial state', () => {
     expect(
-      snapshotDiff(initialState, counter(initialState, {}))
+      snapshotDiff(initialState, counter(initialState, {} as any))
     ).toMatchSnapshot()
   })
   test('shold return plus state', () => {
-    expect(snapshotDiff(15, counter(10, plusNumber(5)))).toMatchSnapshot()
+    expect(
+      snapshotDiff(
+        { counter: initialState },
+        { counter: counter(initialState, plusNumber(5)) }
+      )
+    ).toMatchSnapshot()
   })
   test('shold return minus state', () => {
     expect(
-      snapshotDiff(5, counter(initialState, minusNumber(5)))
+      snapshotDiff(initialState, counter(initialState, minusNumber(5)))
     ).toMatchSnapshot()
   })
 })
